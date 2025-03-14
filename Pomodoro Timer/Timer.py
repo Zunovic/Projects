@@ -88,14 +88,14 @@ window = Tk()
 window.title("Pomodoro Lernen")
 window.config(padx=100, pady=50, bg=YELLOW)
 
-# Initialize the canvas to display our app
+# Initialize  canvas
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 tomato = PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato)
 timer_text = canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 25, "bold"))
 canvas.grid(column=1, row=1)
 
-# Initialize our labels
+# Initialize labels
 timer = Label()
 timer.config(text="", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 50, "bold"))
 timer.grid(column=1, row=0)
@@ -112,5 +112,5 @@ check_marks = Label()
 check_marks.config(fg=GREEN, bg=YELLOW, text="", font=(FONT_NAME, 10))
 check_marks.grid(column=1, row=3)
 
-# Tkinter loop for our window
+# Tkinter loop for window
 window.mainloop()
