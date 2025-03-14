@@ -1,7 +1,6 @@
 from tkinter import *
 import random
-
-# ---------------------------- PASSWORD FUNCTION ------------------------------- #
+import json
 
 def generate_password():
     letters = ["a", "b", "c", "d", "e", "f", "g", "e", "h", "i", "j", "k", "l",
@@ -22,21 +21,28 @@ def generate_password():
 
     passwords_entry.insert(0, str(random_password))
 
-# ---------------------------- SAVE PASSWORD ------------------------------- #
 
 def save_password():
     username = user_name_entry.get()
     password = passwords_entry.get()
     page = website_entry.get()
+    new_data = {
+        page: {
+            "username": username,
+            "password": password,
+        }
+    }
 
-    with open("data.txt", "a") as savefile:
-        savefile.write(f"{username} | {password} | {page} \n")
+    with open("data.json", "r") as savefile:
+        data = json.load(savefile)
+        data.update(new_data)
 
-    user_name_entry.delete(0, END)
-    passwords_entry.delete(0, END)
-    website_entry.delete(0, END)
+    with open("data.json", "w") as savefile:
+        json.dump(data, savefile, indent= 4)
+        user_name_entry.delete(0, END)
+        passwords_entry.delete(0, END)
+        website_entry.delete(0, END)
 
-# ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
 window.title("Password Manager")
