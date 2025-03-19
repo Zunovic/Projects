@@ -10,6 +10,11 @@ After completing four work intervals, a longer break of 20 minutes is taken.
 
 <img src="http://i.epvpimg.com/I4NIeab.png" alt="timer image"/>
 
+### [Snake Game](./Snake)
+- Recreation of the arcade game "Snake" in python
+
+<a href="http://epvpimg.com/eFG9cab"><img src="http://i.epvpimg.com/eFG9cab.png">
+
 ### [US State Guesser](./US%20States%20Guesser)
 - A small game where you can guess US States and the correct ones will be displayed
 
